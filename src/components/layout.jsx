@@ -3,7 +3,9 @@ export default function Layout() {
     return (
       <header>
         <div className="header-top">
-          <img src="/samsol.jpg" alt="SamsSolutions" />
+          <Link to="/">
+            <img src="/samsol.jpg" alt="SamsSolutions"/>
+          </Link>
           <h1>My Portfolio</h1>
         </div>
   

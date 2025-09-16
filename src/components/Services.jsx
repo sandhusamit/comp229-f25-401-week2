@@ -4,7 +4,7 @@ export default function Services() {
         <h1>My Services</h1>
         
         {/* Mortgage Services */}
-        <section style={{ marginBottom: "2rem" }}>
+        <section style={{ marginTop: "5rem", marginBottom: "7rem" }}>
           <h2>Mortgage Services</h2>
           <ul>
             <li>Personalized mortgage advice</li>
