@@ -3,6 +3,9 @@ import Layout from './components/layout';
 import About from './components/About';
 import Home from './components/Home';
 import Projects from './components/Projects';
+import Education from './components/Education';
+import Services from './components/Services';
+import Contact from './components/Contact';
 const MainRouter = () => {
     return (
         <>
@@ -10,10 +13,10 @@ const MainRouter = () => {
         <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/about' element={<About />} />
-            <Route path='/contact' element={<div>Contact Page</div>} />
-            <Route path='/education' element={<div>Education Page</div>} />  
+            <Route path='/contact' element={<Contact />} />
+            <Route path='/education' element={<Education />} />  
             <Route path='/projects' element={<Projects />} />  
-            <Route path='/services' element={<div>Services Page</div>} />
+            <Route path='/services' element={<Services />} />
         </Routes>
         </>
     )
