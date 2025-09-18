@@ -9,7 +9,7 @@
 }
 
 body {
-  /* background: linear-gradient(135deg, #e0eafc, #cfdef3); */
+  background: linear-gradient(135deg, #e0eafc, #cfdef3);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -75,6 +75,16 @@ nav a:hover {
 
 /* Profile image */
 #me {
+  border: 4px solid #0077ff;
+  border-radius: 15px;
+  display: block;
+  margin: 2rem auto;
+  object-fit: cover;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+#prob-solve {
   border: 4px solid #0077ff;
   border-radius: 15px;
   display: block;

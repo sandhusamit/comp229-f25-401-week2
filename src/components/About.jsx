@@ -1,6 +1,6 @@
 export default function About() {
   return (
-    <section style={{ margin: "2rem auto", padding: "1rem", maxWidth: "1200px" }}>
+    <section style={{ margin: "2rem auto", padding: "1rem", maxWidth: "1200px", backgroundColor: "white" }}>
       <h2 style={{ color: "#0077ff", marginBottom: "1.5rem", textAlign: "center" }}>
         Meet the real me...
       </h2>

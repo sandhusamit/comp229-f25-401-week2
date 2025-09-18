@@ -1,28 +1,62 @@
 export default function Education() {
     return (
-        <>
-            <div>Education Page</div>
-            <div className="education1">
-                <img src="cencol.png" id="cencol" alt="CenCol"></img>
-                <h2>Centennial College</h2>
-                <p>
-                    Currently studying at Centennial College as a 2nd year in the 1st semester. I had choosen this program due to the online
-                    flexibility as well as giving me the tools I need to learn software engineering. The program is Software Engineering Technology 
-                    delivered online and is 3 years advanced diploma. 
-
-                    Started Year: 2024 September (Fall Semester)
-        
-                </p>
-            </div>
-            <div className="education2">
-                <img src="python.jpg" id="website"></img>
-                <h2>Python Entry Level Certification</h2>
-                <p>
-                    Python Entry Level Certification earned through the python institude. Studied for the associated level but decided to learn full stack through centennial. Loops, json files, tables, and OOP.
-                    Completed Year: 2023
-                </p>s
-            </div>
-
-        </>
-    )
-}
+      <section style={{ margin: "2rem auto", padding: "1rem", maxWidth: "1200px", backgroundColor: "white" }}>
+        <h2 style={{ color: "#0077ff", marginBottom: "2rem", textAlign: "center" }}>
+          Education
+        </h2>
+  
+        {/* Centennial College */}
+        <div 
+          style={{ 
+            display: "flex", 
+            alignItems: "center", 
+            justifyContent: "center", 
+            gap: "2rem", 
+            marginBottom: "3rem" 
+          }}
+        >
+          <img 
+            src="cencol.png" 
+            alt="Centennial College" 
+            style={{ width: "300px", borderRadius: "10px" }} 
+          />
+          <div>
+            <h3 style={{ marginBottom: "1rem" }}>Centennial College</h3>
+            <p style={{ lineHeight: "1.6rem" }}>
+              Currently studying at Centennial College as a 2nd year in the 1st semester. 
+              I chose this program due to the online flexibility as well as the tools it 
+              provides for learning software engineering. The program is <b>Software Engineering 
+              Technology</b>, delivered online as a 3-year advanced diploma. <br /><br />
+              <b>Started Year:</b> 2024 September (Fall Semester)
+            </p>
+          </div>
+        </div>
+  
+        {/* Python Certification */}
+        <div 
+          style={{ 
+            display: "flex", 
+            alignItems: "center", 
+            justifyContent: "center", 
+            gap: "2rem" 
+          }}
+        >
+          <img 
+            src="python.jpg" 
+            alt="Python Certification" 
+            style={{ width: "300px", borderRadius: "10px" }} 
+          />
+          <div>
+            <h3 style={{ marginBottom: "1rem" }}>Python Entry Level Certification</h3>
+            <p style={{ lineHeight: "1.6rem" }}>
+              Python Entry Level Certification earned through the Python Institute. 
+              Studied for the associated level but decided to pursue full stack development 
+              through Centennial. Covered loops, JSON files, tables, and OOP. <br /><br />
+              <b>Completed Year:</b> 2023
+            </p>
+          </div>
+        </div>
+      </section>
+    );
+  }
+  

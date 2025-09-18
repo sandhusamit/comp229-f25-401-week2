@@ -2,20 +2,19 @@ import { Link } from "react-router-dom";
 
 export default function Home() {
   return (
-    <section style={{ margin: "2rem auto", padding: "1rem", maxWidth: "1200px" }}>
+    <section style={{ margin: "3rem auto", padding: "1rem", maxWidth: "1200px", backgroundColor: "white" }}>
       <h2 style={{ color: "#0077ff", marginBottom: "1.5rem" }}>Do we have a problem?</h2>
 
-      {/* Flex container */}
-      <div style={{ display: "flex", alignItems: "flex-start", gap: "2rem" }}>
-        {/* Image on the left */}
+      <div style={{ margin:"3rem auto", display: "flex", alignItems: "flex-start", gap: "2rem" }}>
+
         <img 
-          id="me" 
+          id="prob-solve" 
           src="prob_solve.jpg" 
           alt="Samit Sandhu" 
           style={{ width: "40%", borderRadius: "12px", objectFit: "cover" }} 
         />
 
-        {/* Text on the right */}
+
         <div style={{ flex: 1 }}>
           <p style={{ lineHeight: "1.8rem", marginBottom: "1rem", fontSize: 20 }}> 
             Meet Sam — your go-to problem solver. With <strong>2 years of coding experience</strong> and 
