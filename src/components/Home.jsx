@@ -1,110 +1,46 @@
-import { useState } from "react"; 
+import { Link } from "react-router-dom";
 
-export default function Contact() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-
-  const handleChange = (e) => {
-    setFormData({ 
-      ...formData, 
-      [e.target.name]: e.target.value 
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Form submitted:", formData);
-    alert("Thanks for reaching out! I’ll get back to you soon.");
-  };
-
+export default function Home() {
   return (
     <section style={{ margin: "2rem auto", padding: "1rem", maxWidth: "1200px" }}>
-      <h2 style={{ color: "#0077ff", marginBottom: "1.5rem", textAlign: "center" }}>
-        Contact Me
-      </h2>
+      <h2 style={{ color: "#0077ff", marginBottom: "1.5rem" }}>Do we have a problem?</h2>
 
-      {/* Flex layout like Home/About */}
-      <div 
-        style={{ 
-          display: "flex", 
-          alignItems: "flex-start", 
-          justifyContent: "center", 
-          gap: "2rem", 
-          width: "100%" 
-        }}
-      >
-        {/* Left side: image (optional) */}
+      {/* Flex container */}
+      <div style={{ display: "flex", alignItems: "flex-start", gap: "2rem" }}>
+        {/* Image on the left */}
         <img 
-          src="contact.png" 
-          alt="Get in touch" 
-          style={{ 
-            width: "40%", 
-            borderRadius: "12px", 
-            objectFit: "cover" 
-          }} 
+          id="me" 
+          src="prob_solve.jpg" 
+          alt="Samit Sandhu" 
+          style={{ width: "40%", borderRadius: "12px", objectFit: "cover" }} 
         />
 
-        {/* Right side: form */}
-        <form 
-          onSubmit={handleSubmit} 
-          style={{ flex: 1, maxWidth: "500px" }}
-        >
-          <div style={{ marginBottom: "1rem" }}>
-            <label htmlFor="name">Name</label><br />
-            <input
-              type="text"
-              id="name"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              required
-              style={{ width: "100%", padding: "0.5rem" }}
-            />
-          </div>
+        {/* Text on the right */}
+        <div style={{ flex: 1 }}>
+          <p style={{ lineHeight: "1.8rem", marginBottom: "1rem", fontSize: 20 }}> 
+            Meet Sam — your go-to problem solver. With <strong>2 years of coding experience</strong> and 
+            <strong> 5 years in mortgage and real estate</strong>, Sam combines technical know-how 
+            with practical business expertise to tackle challenges head-on. 
+          </p>
 
-          <div style={{ marginBottom: "1rem" }}>
-            <label htmlFor="email">Email</label><br />
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-              style={{ width: "100%", padding: "0.5rem" }}
-            />
-          </div>
+          <p style={{ lineHeight: "1.8rem", marginBottom: "1rem", fontSize: 20 }}>
+            Whether you’re trying to streamline your financial systems, automate your workflows, 
+            or simply get clear, actionable advice, Sam’s solutions are tailored to make your 
+            headaches disappear. No fluff. No delays. Just results. 
+          </p>
 
-          <div style={{ marginBottom: "1rem" }}>
-            <label htmlFor="message">Message</label><br />
-            <textarea
-              id="message"
-              name="message"
-              rows="5"
-              value={formData.message}
-              onChange={handleChange}
-              required
-              style={{ width: "100%", padding: "0.5rem" }}
-            ></textarea>
-          </div>
+          <p style={{ lineHeight: "1.8rem", marginBottom: "1rem", fontSize: 20 }}>
+            From coding elegant apps to optimizing your mortgage strategies, Sam works behind the 
+            scenes so you can focus on what matters most. Your problems become Sam’s mission. 
+          </p>
 
-          <button 
-            type="submit" 
-            style={{
-              padding: "0.7rem 1.5rem",
-              backgroundColor: "#0077ff",
-              color: "#fff",
-              border: "none",
-              borderRadius: "5px",
-              cursor: "pointer"
-            }}
+          <Link 
+            to="/about" 
+            style={{ color: "#0077ff", fontWeight: "bold", textDecoration: "underline" }}
           >
-            Send
-          </button>
-        </form>
+            Learn more about Sam and his solutions...
+          </Link>
+        </div>
       </div>
     </section>
   );
