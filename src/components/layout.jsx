@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+// Layout component which contains the header and navigation links
 export default function Layout() {
     return (
       <header>

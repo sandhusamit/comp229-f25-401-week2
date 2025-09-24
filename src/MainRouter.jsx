@@ -6,10 +6,14 @@ import Projects from './components/Projects';
 import Education from './components/Education';
 import Services from './components/Services';
 import Contact from './components/Contact';
+
+//Main router which controls the routing of the application using the url path
+//Each route is assigned to a jsx component which is rendered when the route is accessed
 const MainRouter = () => {
     return (
         <>
         <Layout />
+        
         <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/about' element={<About />} />
