@@ -2,7 +2,8 @@ import { useState } from "react";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
-    name: "",
+    firstName: "",
+    lastName: "",
     email: "",
     message: "",
     service: "",
@@ -15,11 +16,31 @@ export default function Contact() {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    alert("Thanks for reaching out! I’ll get back to you soon.");
+  
+    try {
+      const response = await fetch("http://localhost:3000/api/contacts", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+  
+      if (response.ok) {
+        alert("Thanks for reaching out! I’ll get back to you soon.");
+        setFormData({ firstName: "", lastName: "", email: "", message: "", service: "" });
+      } else {
+        console.error("Failed to send inquiry");
+        alert("Something went wrong. Please try again.");
+      }
+    } catch (err) {
+      console.error("Error submitting form:", err);
+      alert("Server error. Please try again later.");
+    }
   };
+  
+    
+
 
   return (
     <section style={{ margin: "2rem auto", padding: "1rem", maxWidth: "1200px" }}>
@@ -43,12 +64,24 @@ export default function Contact() {
           style={{ flex: 1, maxWidth: "500px" }}
         >
           <div style={{ marginBottom: "1rem" }}>
-            <label htmlFor="name">Name</label><br />
+            <label htmlFor="firstName">First Name</label><br />
             <input
               type="text"
-              id="name"
-              name="name"
-              value={formData.name}
+              id="firstName"
+              name="firstName"
+              value={formData.firstName}
+              onChange={handleChange}
+              required
+              style={{ width: "100%", padding: "0.5rem" }}
+            />
+          </div>
+          <div style={{ marginBottom: "1rem" }}>
+            <label htmlFor="lastName">Last Name</label><br />
+            <input
+              type="text"
+              id="lastName"
+              name="lastName"
+              value={formData.lastName}
               onChange={handleChange}
               required
               style={{ width: "100%", padding: "0.5rem" }}
@@ -57,17 +90,17 @@ export default function Contact() {
           <div style={{ marginBottom: "1rem" }}>
               <label htmlFor="topic">Service</label><br />
               <select
-                id="topic"
-                name="topic"
-                value={formData.topic}
+                id="service"
+                name="service"
+                value={formData.service}
                 onChange={handleChange}
                 style={{ width: "100%", padding: "0.5rem" }}
               >
                 <option value="">-- Select a Service --</option>
                 <option value="mortgage">Mortgage</option>
                 <option value="real-estate">Real Estate</option>
-                <option value="coding">Tech Solutions</option>
-                <option value="other">Other</option>
+                <option value="techsolutions">Tech Solutions</option>
+                {/* <option value="other">Other</option> */}
               </select>
             </div>
 
@@ -114,5 +147,5 @@ export default function Contact() {
         </form>
       </div>
     </section>
-  );
-}
+  )
+};
