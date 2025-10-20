@@ -44,7 +44,7 @@ router.put("/api/contacts/:id", updateContactById); // Example route to update c
 router.delete("/api/contacts/:id", deleteContactById); // Example route to delete contact by ID
 router.delete("/api/contacts", deleteAllContacts); // Example route to delete all contacts
 
-
+import authMiddleware from "../server/middlewares/auth.js";
 
 
 // Routes for Project collections
@@ -52,8 +52,8 @@ router.get("/api/projects", getAllProjects); // Example route for projects
 router.post("/api/projects", createProject); // Example route to create a project
 router.get("/api/projects/:id", getProjectById); // Example route to get project by ID
 router.put("/api/projects/:id", updateProjectById); // Example route to update project by ID
-router.delete("/api/projects/:id", deleteProjectById); // Example route to delete project by ID
-router.delete("/api/projects", deleteAllProjects); // Example route to delete all projects
+router.delete("/api/projects/:id", authMiddleware, deleteProjectById); // Example route to delete project by ID
+router.delete("/api/projects", authMiddleware, deleteAllProjects); // Example route to delete all projects
 
 // Routes for qualifications
 router.get("/api/qualifications", getAllQualifications); // Example route for qualifications
@@ -63,7 +63,7 @@ router.put("/api/qualifications/:id", updateQualificationById); // Example route
 router.delete("/api/qualifications/:id", deleteQualificationById); // Example route to delete qualification by ID
 router.delete("/api/qualifications", deleteAllQualifications); // Example route to delete all qualifications
 
-import authMiddleware from "../server/middlewares/auth.js";
+
 
 // Routes for Users collection
 router.get("/api/users/:id", authMiddleware, getUserById); // Example route to get user by ID
